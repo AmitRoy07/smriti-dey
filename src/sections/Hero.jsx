@@ -25,6 +25,15 @@ that feel polished, fast, and business-ready`;
           text={text}
           textColor={"text-black"}
         />
+        <div className="px-5 sm:px-10 mt-10">
+          <a
+            href="/resume.pdf"
+            download="Smriti-Dey-Resume.pdf"
+            className="inline-flex items-center justify-center rounded-full border border-gold bg-black px-8 py-4 text-sm font-medium uppercase tracking-[0.35em] text-white transition-colors duration-300 hover:bg-white hover:text-black"
+          >
+            Download Resume
+          </a>
+        </div>
       </div>
       <figure
         className="absolute inset-x-0 -top-16 z-0 h-[42vh] pointer-events-none sm:-top-12 sm:h-[40vh] md:inset-0 md:h-auto"
