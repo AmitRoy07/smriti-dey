@@ -149,14 +149,17 @@ const Marquee = ({
     if (!container || !itemsRef.current.length) return;
 
     const cleanup = () => {
-      observerRef.current?.kill();
-      loopRef.current?.kill();
+      observerRef.current?.kill?.();
+      loopRef.current?.kill?.();
 
       observerRef.current = null;
       loopRef.current = null;
 
-      gsap.killTweensOf(itemsRef.current);
-      gsap.set(itemsRef.current, { clearProps: "x,xPercent" });
+      const validItems = itemsRef.current.filter(Boolean);
+      if (validItems.length) {
+        gsap.killTweensOf(validItems);
+        gsap.set(validItems, { clearProps: "x,xPercent" });
+      }
     };
 
     const init = () => {
