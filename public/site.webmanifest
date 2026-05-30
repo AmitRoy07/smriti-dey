@@ -1,0 +1,17 @@
+{
+  "name": "Smriti Dey Portfolio",
+  "short_name": "Smriti Dey",
+  "description": "UI/UX Developer and Frontend Engineer portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e5e5e0",
+  "theme_color": "#e5e5e0",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

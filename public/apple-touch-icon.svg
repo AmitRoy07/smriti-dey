@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Smriti Dey">
+  <rect width="180" height="180" rx="40" fill="#050505"/>
+  <path d="M46 118c10 12 24 18 41 18 22 0 37-11 37-28 0-16-10-23-32-28-16-4-21-7-21-13 0-7 6-10 15-10 11 0 20 4 28 12l12-16c-10-10-23-15-39-15-21 0-36 12-36 28 0 18 12 24 34 29 14 4 19 7 19 13 0 7-6 10-17 10-12 0-22-4-30-14l-11 14Z" fill="#e5e5e0"/>
+  <path d="M134 40v100" stroke="#cfa355" stroke-width="12" stroke-linecap="round"/>
+</svg>
