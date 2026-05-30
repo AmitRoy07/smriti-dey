@@ -7,8 +7,8 @@ import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
   const isTablet = useMediaQuery({ minWidth: 854, maxWidth: 1100 });
-  const planetScale = isMobile ? 0.42 : isTablet ? 0.58 : 0.74;
-  const cameraPosition = isMobile ? [0, 0, -13] : [0, 0, -11.5];
+  const planetScale = isMobile ? 0.58 : isTablet ? 0.64 : 0.74;
+  const cameraPosition = isMobile ? [0, 0, -12.2] : [0, 0, -11.5];
   const text = `I design and build responsive interfaces
 with React, WordPress, Shopify, and modern UI systems
 that feel polished, fast, and business-ready`;
@@ -27,7 +27,7 @@ that feel polished, fast, and business-ready`;
         />
       </div>
       <figure
-        className="absolute inset-x-0 top-0 z-0 h-[34vh] pointer-events-none md:inset-0 md:h-auto"
+        className="absolute inset-x-0 -top-16 z-0 h-[42vh] pointer-events-none sm:-top-12 sm:h-[40vh] md:inset-0 md:h-auto"
         style={{ width: "100vw" }}
       >
         <Canvas

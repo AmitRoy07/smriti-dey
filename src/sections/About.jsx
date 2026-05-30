@@ -57,7 +57,7 @@ I enjoy collaborating with designers, backend teams, and stakeholders to turn id
         icon="lucide:user-round-check"
         withScrollTrigger={true}
       />
-      <div className="flex flex-col items-center justify-between gap-16 px-10 pb-16 text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/60">
+      <div className="flex flex-col items-center justify-between gap-16 px-5 pb-16 text-xl font-light tracking-wide sm:px-10 lg:flex-row md:text-2xl lg:text-3xl text-white/60">
         <img
           ref={imgRef}
           src="/assets/backgrounds/smriti.jpg"

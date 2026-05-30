@@ -44,7 +44,7 @@ const Contact = () => {
           icon="lucide:send"
           withScrollTrigger={true}
         />
-        <div className="flex px-10 font-light text-white uppercase lg:text-[32px] text-[26px] leading-none mb-10">
+        <div className="flex px-5 font-light text-white uppercase sm:px-10 lg:text-[32px] text-[26px] leading-none mb-10">
           <div className="flex flex-col w-full gap-10">
             <div className="social-link">
               <h2 className="flex items-center gap-3">

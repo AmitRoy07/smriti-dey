@@ -9,6 +9,7 @@ const Marquee = ({
   icon = "mdi:star-four-points",
   iconClassName = "",
   reverse = false,
+  scrollReactive = true,
 }) => {
   const containerRef = useRef(null);
   const itemsRef = useRef([]);
@@ -118,30 +119,45 @@ const Marquee = ({
   }
 
   useEffect(() => {
+    if (!itemsRef.current.length) return;
+
     const tl = horizontalLoop(itemsRef.current, {
       repeat: -1,
       paddingRight: 30,
       reversed: reverse,
     });
 
-    Observer.create({
-      onChangeY(self) {
-        let factor = 2.5;
-        if ((!reverse && self.deltaY < 0) || (reverse && self.deltaY > 0)) {
-          factor *= -1;
-        }
-        gsap
-          .timeline({
-            defaults: {
-              ease: "none",
-            },
-          })
-          .to(tl, { timeScale: factor * 2.5, duration: 0.2, overwrite: true })
-          .to(tl, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
-      },
-    });
-    return () => tl.kill();
-  }, [items, reverse]);
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    let observer;
+
+    if (scrollReactive && !isMobile) {
+      observer = Observer.create({
+        onChangeY(self) {
+          let factor = 2.5;
+          if ((!reverse && self.deltaY < 0) || (reverse && self.deltaY > 0)) {
+            factor *= -1;
+          }
+          gsap
+            .timeline({
+              defaults: {
+                ease: "none",
+              },
+            })
+            .to(tl, {
+              timeScale: factor * 2.5,
+              duration: 0.2,
+              overwrite: true,
+            })
+            .to(tl, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
+        },
+      });
+    }
+
+    return () => {
+      observer?.kill();
+      tl.kill();
+    };
+  }, [items, reverse, scrollReactive]);
   return (
     <div
       ref={containerRef}
@@ -152,7 +168,7 @@ const Marquee = ({
           <span
             key={index}
             ref={(el) => (itemsRef.current[index] = el)}
-            className="flex shrink-0 items-center gap-x-8 px-10 leading-none sm:gap-x-10 sm:px-14 lg:px-18"
+            className="flex shrink-0 items-center gap-x-5 px-6 leading-none sm:gap-x-10 sm:px-14 lg:px-18"
           >
             <Icon
               icon={icon}

@@ -134,7 +134,7 @@ const Works = () => {
               className="absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path"
             />
 
-            <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
+            <div className="flex justify-between px-5 text-black transition-all duration-500 sm:px-10 md:group-hover:px-12 md:group-hover:text-white">
               <div>
                 <h2 className="flex items-center gap-3 lg:text-[32px] text-[26px] leading-none">
                   <Icon icon={project.icon} className="size-7 text-gold" />
@@ -147,7 +147,7 @@ const Works = () => {
               <Icon icon="lucide:arrow-up-right" className="md:size-6 size-5" />
             </div>
             <div className="w-full h-0.5 bg-black/80" />
-            <div className="flex flex-wrap px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12">
+            <div className="flex flex-wrap px-5 text-xs leading-loose uppercase transition-all duration-500 sm:px-10 md:text-sm gap-x-5 md:group-hover:px-12">
               {project.frameworks.map((framework) => (
                 <p
                   key={framework.id}
@@ -158,7 +158,7 @@ const Works = () => {
                 </p>
               ))}
             </div>
-            <div className="relative flex items-center justify-center px-10 md:hidden h-[400px]">
+            <div className="relative flex items-center justify-center px-5 sm:px-10 md:hidden h-[400px]">
               <img
                 src={project.bgImage}
                 alt={`${project.name} background`}

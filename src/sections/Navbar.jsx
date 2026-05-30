@@ -116,7 +116,7 @@ const Navbar = () => {
     <>
       <nav
         ref={navRef}
-        className="fixed z-50 flex h-dvh w-full flex-col justify-between gap-8 overflow-y-auto bg-black px-8 py-20 uppercase text-white/80 md:left-1/2 md:w-1/2 md:px-10 md:py-[4.5rem] lg:py-16"
+        className="fixed z-50 flex h-dvh w-full flex-col justify-between gap-8 overflow-y-auto bg-black px-5 py-20 uppercase text-white/80 sm:px-8 md:left-1/2 md:w-1/2 md:px-10 md:py-[4.5rem] lg:py-16"
       >
         <div className="flex flex-col gap-y-2 text-[clamp(3.2rem,10vw,5.8rem)] leading-[0.95] md:text-[clamp(3.6rem,7vw,6.5rem)]">
           {navLinks.map(
@@ -167,7 +167,7 @@ const Navbar = () => {
         </div>
       </nav>
       <div
-        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10"
+        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-5 sm:right-10"
         onClick={toggleMenu}
         role="button"
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}

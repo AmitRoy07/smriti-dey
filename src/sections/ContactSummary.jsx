@@ -21,17 +21,25 @@ const ContactSummary = () => {
   ];
 
   useGSAP(() => {
-    gsap.to(containerRef.current, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "center center",
-        end: "+=800 center",
-        scrub: 0.5,
-        pin: true,
-        pinSpacing: true,
-        markers: false,
-      },
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      const tween = gsap.to(containerRef.current, {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "center center",
+          end: "+=800 center",
+          scrub: 0.5,
+          pin: true,
+          pinSpacing: true,
+          markers: false,
+        },
+      });
+
+      return () => tween.kill();
     });
+
+    return () => mm.revert();
   }, []);
 
   return (
