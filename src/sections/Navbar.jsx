@@ -118,7 +118,7 @@ const Navbar = () => {
         ref={navRef}
         className="fixed z-50 flex h-dvh w-full flex-col justify-between gap-8 overflow-y-auto bg-black px-5 py-20 uppercase text-white/80 sm:px-8 md:left-1/2 md:w-1/2 md:px-10 md:py-[4.5rem] lg:py-16"
       >
-        <div className="flex flex-col gap-y-2 text-[clamp(3.2rem,10vw,5.8rem)] leading-[0.95] md:text-[clamp(3.6rem,7vw,6.5rem)]">
+        <div className="flex flex-col gap-y-2 text-[clamp(3.2rem,10vw,5.8rem)] leading-[0.95] md:text-[clamp(3rem,7vw,5rem)]">
           {navLinks.map(
             ({ section, icon }, index) => (
               <div key={index} ref={(el) => (linksRef.current[index] = el)}>
